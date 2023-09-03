@@ -1,24 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSpring, animated } from 'react-spring';
 
 const TextInput = ({ onSubmit, inputText,
-  setInputText }) => {
-  // const [inputText, setInputText] = useState('');
+  setInputText, slideInProps }) => {
 
   const handleSubmit = () => {
     if (inputText.trim() !== '') {
       onSubmit(inputText);
-      setInputText('');
+      // setInputText('');
     }
   };
 
   return (
     <div className="text-input">
-      <textarea
-        placeholder="Enter your poem idea"
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
-      ></textarea>
-      <button onClick={handleSubmit}>Submit</button>
+      <div>
+     
+        <textarea
+          placeholder="Enter your poem idea"
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+        ></textarea>
+        
+      </div>
+      <div>
+        <button onClick={handleSubmit}>Submit</button>
+      </div>
     </div>
   );
 };
