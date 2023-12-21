@@ -18,7 +18,7 @@ const EmotionChart = ({ emotions }) => {
 
   return (
     <div className="emotion-chart">
-        <h3>Emotions Chart</h3>
+        <h3>Emotion Analysis Chart</h3>
         {hasData? (<Pie data={data} />) : 
             <p>Error in generating chart</p>
         }
